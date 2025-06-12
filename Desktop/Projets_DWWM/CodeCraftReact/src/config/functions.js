@@ -1,3 +1,7 @@
+import { useState, useEffect } from "react";
+
+
+
 //  ENVOI D'UN NOUVEL ARTICLE :
  
  export const handleSubmit = async (e, formData) => {
@@ -23,3 +27,28 @@
       return false;
     }
   };
+
+
+  // RECUPERATION DE L'ARTICLE LE PLUS RECENT :
+export const useLatestArticle = () => {
+  const [article, setArticle] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchLatestArticle = async () => {
+      try {
+        const response = await fetch("http://localhost:8000/api/articles/latest");
+        const data = await response.json();
+        setArticle(data);
+      } catch (error) {
+        console.error("Erreur lors du fetch de l'article :", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchLatestArticle();
+  }, []);
+
+  return { article, loading };
+};

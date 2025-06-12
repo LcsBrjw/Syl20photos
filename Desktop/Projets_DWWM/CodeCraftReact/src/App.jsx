@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import {ROUTES} from "./config/routes";
 import { NewArticle } from "./components/NewArticle/NewArticle";
-import { HeroArticle } from "./components/HeroArticle/HeroArticle";
 import {Register} from "./components/Register/Register";
 import { AppLayout } from "./App-layout";
+import { HeroArticle } from "./components/HomePage/HeroArticle";
 
 function App() {
   return (

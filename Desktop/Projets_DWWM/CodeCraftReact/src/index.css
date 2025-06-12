@@ -38,3 +38,12 @@ body{
 .group:hover .animate-marquee {
   animation-play-state: paused;
 }
+
+/* Gradient de couleur sur les titres */
+.gradient-text {
+  background: linear-gradient(to bottom, var(--dark) 0%, var(--dark) 75%, var(--light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
