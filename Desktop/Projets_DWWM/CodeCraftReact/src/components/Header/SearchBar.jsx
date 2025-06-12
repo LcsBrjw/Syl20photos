@@ -1,4 +1,5 @@
 export function SearchBar() {
+
   return (
         <div className=" flex-row items-center justify-center flex">
           <input type="search" className="bg-[var(--light)] rounded-l-full h-[25px] w-[350px] px-4" placeholder="Rechercher" />
